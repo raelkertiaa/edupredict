@@ -1,16 +1,24 @@
 import React from 'react';
+import HomePage from './pages/HomePage';
+import Navbar from './compenents/Navbar';
 
-export default function App() {
+function App() {
   return (
-    <div className="min-h-screen bg-blue-100 flex items-center justify-center font-sans text-slate-200">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-blue-400 mb-4">
-          EduPredict
-        </h1>
-        <p className="text-slate-400 text-lg animate-pulse">
-          Alpha is Online!
-        </p>
-      </div>
+    <div className="min-h-screen bg-blue-100">
+     {/* Navbar */}
+     <Navbar>
+      
+     </Navbar>
+     
+     {/* Main Content */}
+     <HomePage>
+
+     </HomePage>
+
+     {/* Footer */}
+   
     </div>
   );
 }
+
+export default App;
