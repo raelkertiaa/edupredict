@@ -14,11 +14,11 @@ const pool = mysql2.createPool({
 // Test koneksi saat server start
 pool
   .getConnection()
-  .then((conn) => {
+  .then(conn => {
     console.log("Database Connected");
     conn.release();
   })
-  .catch((err) => {
+  .catch(err => {
     console.error("Database Connection Failed:", err.message);
   });
 
