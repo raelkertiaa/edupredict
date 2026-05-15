@@ -1,52 +1,55 @@
-require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+// ── Middleware ──────────────────────────────────────────────
 app.use(cors());
 app.use(express.json());
 
-// Route
-const authRoutes = require("./routes/auth");
-const studentRoutes = require("./routes/student");
+// ── Routes ──────────────────────────────────────────────────
+const authRoutes    = require('./routes/auth');
+const studentRoutes = require('./routes/student');
+const guruRoutes    = require('./routes/guru');
 
-app.use("/api/auth", authRoutes);
-app.use("/api/student", studentRoutes);
+app.use('/api/auth',    authRoutes);
+app.use('/api/student', studentRoutes);
+app.use('/api/guru',    guruRoutes);
 
-// Health Check
-app.get("/", (req, res) => {
+// ── Health Check ─────────────────────────────────────────────
+app.get('/', (req, res) => {
   res.json({
     success: true,
-    message: "API is running successfully",
-    version: "1.0.0",
+    message: 'EduPredict API berjalan ✅',
+    version: '1.0.0',
     endpoints: {
-      auth: "/api/auth",
-      student: "/api/student",
+      auth    : '/api/auth',
+      student : '/api/student',
+      guru    : '/api/guru',
     },
   });
 });
 
-// 404 Handler
+// ── 404 Handler ──────────────────────────────────────────────
 app.use((req, res) => {
   res.status(404).json({
     success: false,
-    message: `Route ${req.method} ${req.originalUrl} not found.`,
+    message: `Route ${req.method} ${req.originalUrl} tidak ditemukan.`,
   });
 });
 
-// Global Error Handler
+// ── Global Error Handler ─────────────────────────────────────
 app.use((err, req, res, next) => {
-  console.error("Unhandled Error:", err);
+  console.error('Unhandled error:', err);
   res.status(500).json({
     success: false,
-    message: "An unexpected error occurred. Please try again later.",
+    message: 'Terjadi kesalahan pada server.',
   });
 });
 
-// Run Server
+// ── Start Server ─────────────────────────────────────────────
 app.listen(PORT, () => {
-  console.log(`Server nyala dan jalan di http://localhost:${PORT}`);
+  console.log(`🚀 Server jalan di http://localhost:${PORT}`);
 });
