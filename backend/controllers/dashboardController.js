@@ -68,13 +68,13 @@ const getDashboard = async (req, res) => {
 
     // Notifikasi terbaru (5 terakhir)
     const [notifikasi] = await db.query(
-      `SELECT id, pesan, tipe, is_read, created_at
-       FROM notifications
-       WHERE user_id = ?
-       ORDER BY created_at DESC
-       LIMIT 5`,
-      [req.user.id]
-    );
+  `SELECT id, title, message, type, is_read, created_at
+   FROM notifications
+   WHERE user_id = ?
+   ORDER BY created_at DESC
+   LIMIT 5`,
+  [req.user.id]
+);
 
     res.status(200).json({
       success: true,

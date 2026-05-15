@@ -21,7 +21,7 @@ const checkNISN = async (req, res) => {
          s.nama_siswa,
          s.kelas,
          s.gender,
-         ar.exam_score,
+         ar.previous_scores AS exam_score,
          ar.attendance,
          ar.hours_studied,
          ar.recorded_at,
@@ -50,7 +50,7 @@ const checkNISN = async (req, res) => {
 
     const [histori] = await db.query(
       `SELECT
-         ar.exam_score,
+         ar.previous_scores AS exam_score,
          ar.attendance,
          ar.hours_studied,
          ar.recorded_at,
