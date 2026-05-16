@@ -1,13 +1,12 @@
 import React from 'react';
+import FormLoginGuru from '../compenents/FormLoginGuru';
 
 function LoginGuruPage() {
-  return <div className="mx-auto w-150 h-150 m-10 px-8 pt-20 pb-16 bg-white">
-    <h1 className="text-2xl font-bold">masuk sebagai guru</h1>
-    <form action="">
-      <input type="text" /> Username
-      <input type="text" /> Password
-    </form>
+  return (
+  <div className="w-full min-h-screen bg-blue-100 flex items-center justify-center py-10">
+    <FormLoginGuru/>
   </div>
+  );
 };
 
 export default LoginGuruPage;

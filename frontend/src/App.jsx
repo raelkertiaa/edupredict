@@ -16,7 +16,7 @@ function App() {
     <div className="min-h-screen bg-blue-100 flex flex-col">
      {!hideLayout && <Navbar />}
      
-      <div className="flex-1">
+      <div className="flex-1 bg-blue-100">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/team" element={<TeamPage />} />

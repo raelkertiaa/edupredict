@@ -7,20 +7,20 @@ function HomePage(){
             {/* hero section  */}
             <div className="hero grid md:grid-cols-2 items-center grid-cols-1 lg:pt-0 pt-16 pb-32">
                 <div className="text-center md:text-left lg:pb-0 pb-16">
-                <h1 className="xl:text-7xl/tight font-semibold mb-2 lg:text-6xl/tight text-6xl">Deteksi Dini <br /> Akademik Siswa</h1>
+                <h1 className="xl:text-7xl/tight font-semibold mb-2 lg:text-6xl/tight text-6xl">Deteksi Dini <br /><span className="text-sky-800"> Akademik Siswa </span></h1>
                 <p className="xl:text-base/loose opacity-75 text-sm/loose">Sistem peringatan dini berbasis data dengan integrasi Generative AI untuk menghasilkan rekomendasi intervensi berbasis faktor risiko dominan</p>
                 <div className="mt-6">
                     <a href="" className="bg-blue-900 w-fit text-white p-3 rounded text-lg hover:bg-stone-900">Mulai Deteksi <i class="ri-search-ai-line pl-1"></i></a>
                 </div>
                 </div>
-                <img src={heroImg} alt="hero" className="w-full md:block hidden"/>
+                <img src={heroImg} alt="hero" className="items-left  md:block hidden"/>
             </div>
             {/* hero section  */}
         </div>
 
         {/* Tentang */}
-        <div className="tentang" id="tentang">
-            <div className="container mx-auto px-8 pt-20 pb-16 bg-white">
+        <div className="tentang bg-white" id="tentang">
+            <div className="container mx-auto px-8 pt-20 pb-16">
                 <div className="text-center max-w-2xl mx-auto">
                     <h2 className="text-5xl font-semibold mb-6">Tentang Edu Predict</h2>
                     <p className="text-lg opacity-75">EduPredict AI merupakan solusi berbasis web untuk menjawab urgensi peningkatan keberhasilan akademik siswa melalui sistem peringatan dini berbasis data.</p>
